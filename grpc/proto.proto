@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package grpc;
+
+option go_package = "homework4_test/grpc";
+
+// The node service definition.
+service Node {
+    rpc RequestAccess(Request) returns (Reply);
+    rpc ReplyToRequest(Reply) returns (Reply);
+}
+
+
+message Request {
+    string process_id = 1;
+    int64 timestamp = 2;
+}
+
+message Reply {
+    bool access_granted = 1;
+    int64 timestamp = 2;
+    string process_id = 3;
+}
