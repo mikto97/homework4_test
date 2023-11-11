@@ -11,31 +11,31 @@ Running the Program
 Clone the repository:
 
 bash
-Copy code
+
 git clone https://github.com/your-username/your-repository.git
 cd your-repository
 Generate gRPC code:
 
 bash
-Copy code
+
 protoc grpc/proto.proto --go_out=plugins=grpc:grpc
 Build the executable:
 
 bash
-Copy code
+
 go build -o node main.go
 Run the nodes:
 
 Open three separate terminals and run the following commands to start three nodes:
 
 bash
-Copy code
+
 ./node 1 50051 127.0.0.1:50052 127.0.0.1:50053
 bash
-Copy code
+
 ./node 2 50052 127.0.0.1:50051 127.0.0.1:50053
 bash
-Copy code
+
 ./node 3 50053 127.0.0.1:50051 127.0.0.1:50052
 Replace 127.0.0.1 with the actual IP addresses or hostnames if running on different machines.
 
